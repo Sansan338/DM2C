@@ -10,6 +10,10 @@ public class PlayerScript : MonoBehaviour
     private Animator playerAnimator;
     [SerializeField]
     private float moveSpeed;
+    [SerializeField]
+    private float jumpPower;
+
+    private bool isGround;
 
     void Start()
     {
@@ -31,6 +35,32 @@ public class PlayerScript : MonoBehaviour
             playerAnimator.SetBool("isMove",false);
         }
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            playerRigidbody.velocity = Vector3.up * jumpPower;
+        }
+
         playerRigidbody.velocity = new Vector3(moveX * moveSpeed * Time.deltaTime, playerRigidbody.velocity.y,0);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Wall")
+        {
+            GameManager.gameManager.SetGameState(GameManager.GameState.GameOver);
+        }
+
+        if(collision.gameObject.tag == "Ground")
+        {
+            isGround = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            isGround = false;
+        }
     }
 }

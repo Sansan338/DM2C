@@ -17,7 +17,7 @@ public class NumberWallScript : MonoBehaviour
 
     void Start()
     {
-        this.transform.position = new Vector3 (0,0,startPositionZ);
+        this.transform.position = new Vector3 (this.transform.position.x,this.transform.position.y,startPositionZ);
     }
 
     private void FixedUpdate()
@@ -30,7 +30,5 @@ public class NumberWallScript : MonoBehaviour
         {
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, startPositionZ);
         }
-
-        Debug.Log(wallRigidbody.velocity.z);
     }
 }

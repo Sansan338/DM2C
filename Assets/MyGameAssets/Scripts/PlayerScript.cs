@@ -12,12 +12,17 @@ public class PlayerScript : MonoBehaviour
     private float moveSpeed;
     [SerializeField]
     private float jumpPower;
+    [SerializeField]
+    private int maxJump;
+
+    private int currentJumpCount;
 
     private bool isGround;
 
     void Start()
     {
         playerAnimator.SetBool("isMove",false);
+        currentJumpCount = maxJump;
     }
 
     void Update()
@@ -35,9 +40,10 @@ public class PlayerScript : MonoBehaviour
             playerAnimator.SetBool("isMove",false);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && isGround == true && currentJumpCount > 0)
         {
             playerRigidbody.velocity = Vector3.up * jumpPower;
+            currentJumpCount--;
         }
 
         playerRigidbody.velocity = new Vector3(moveX * moveSpeed * Time.deltaTime, playerRigidbody.velocity.y,0);
@@ -62,5 +68,11 @@ public class PlayerScript : MonoBehaviour
         {
             isGround = false;
         }
+    }
+
+    //ƒWƒƒƒ“ƒv‰ñ”‚ğæ“¾
+    public int GetJumpCount()
+    {
+        return currentJumpCount;
     }
 }

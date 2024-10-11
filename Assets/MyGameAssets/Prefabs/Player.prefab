@@ -1062,6 +1062,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 3586452492443796389}
   moveSpeed: 300
   jumpPower: 10.5
+  maxJump: 3
 --- !u!114 &8420485965388848522
 MonoBehaviour:
   m_ObjectHideFlags: 0

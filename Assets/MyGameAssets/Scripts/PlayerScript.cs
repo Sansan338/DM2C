@@ -42,9 +42,22 @@ public class PlayerScript : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && isGround == true && currentJumpCount > 0)
         {
+            playerAnimator.SetBool("isJump",true);
             playerRigidbody.velocity = Vector3.up * jumpPower;
             currentJumpCount--;
         }
+
+        if(playerRigidbody.velocity.y < 0)
+        {
+            playerAnimator.SetBool("isJump", false);
+            playerAnimator.SetBool("isFall", true);
+        }
+
+        if(isGround == true)
+        {
+            playerAnimator.SetBool("isFall",false);
+        }
+
 
         playerRigidbody.velocity = new Vector3(moveX * moveSpeed * Time.deltaTime, playerRigidbody.velocity.y,0);
     }

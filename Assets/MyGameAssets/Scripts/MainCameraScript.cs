@@ -6,12 +6,21 @@ public class MainCameraScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private float delaySpeed;
 
+    private Vector3 offset;
+
+
+    void Start()
+    {
+        offset = this.transform.position - player.transform.position;
+    }
     void Update()
     {
         if (player != null)
         {
-            this.gameObject.transform.position = new Vector3(player.transform.position.x, this.transform.position.y, player.transform.position.z - 5);
+            this.transform.position = Vector3.Lerp(this.transform.position, player.transform.position + offset, delaySpeed * Time.deltaTime);
         }
     }
 }

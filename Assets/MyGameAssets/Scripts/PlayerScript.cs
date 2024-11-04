@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour
 
         var moveX = Input.GetAxis("Horizontal");
 
-        if(moveX != 0)
+        if(isGround == true && moveX != 0)
         {
             playerAnimator.SetBool("isMove", true);
         }

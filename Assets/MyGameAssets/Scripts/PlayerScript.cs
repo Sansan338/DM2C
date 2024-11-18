@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     private Animator playerAnimator;
     [SerializeField]
     private float moveSpeed;
+    [SerializeField] 
+    private float forwardSpeed;
     [SerializeField]
     private float jumpPower;
     [SerializeField]
@@ -59,7 +61,7 @@ public class PlayerScript : MonoBehaviour
         }
 
 
-        playerRigidbody.velocity = new Vector3(moveX * moveSpeed * Time.deltaTime, playerRigidbody.velocity.y,0);
+        playerRigidbody.velocity = new Vector3(moveX * moveSpeed * Time.deltaTime, playerRigidbody.velocity.y,forwardSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)

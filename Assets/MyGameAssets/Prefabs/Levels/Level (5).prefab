@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2227404481606961706}
   - component: {fileID: 8054459157458640411}
+  - component: {fileID: 569739162949452896}
   m_Layer: 0
   m_Name: Level (5)
   m_TagString: Level
@@ -66,6 +67,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 75, y: 1, z: 30}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &569739162949452896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3214527577887651974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66eb58a169a715c4fa7c86f35e606a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelMoveSpeed: 10
 --- !u!1001 &610971432600899256
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,8 +10,6 @@ public class PlayerScript : MonoBehaviour
     private Animator playerAnimator;
     [SerializeField]
     private float moveSpeed;
-    [SerializeField] 
-    private float forwardSpeed;
     [SerializeField]
     private float jumpPower;
     [SerializeField]
@@ -23,7 +21,6 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        playerAnimator.SetBool("isMove",false);
         currentJumpCount = maxJump;
     }
 
@@ -33,23 +30,15 @@ public class PlayerScript : MonoBehaviour
 
         var moveX = Input.GetAxis("Horizontal");
 
-        if(isGround == true && moveX != 0)
-        {
-            playerAnimator.SetBool("isMove", true);
-        }
-        else
-        {
-            playerAnimator.SetBool("isMove",false);
-        }
-
         if(Input.GetKeyDown(KeyCode.Space) && isGround == true && currentJumpCount > 0)
         {
             playerAnimator.SetBool("isJump",true);
             playerRigidbody.velocity = Vector3.up * jumpPower;
+            isGround = false;
             currentJumpCount--;
         }
 
-        if(playerRigidbody.velocity.y < 0)
+        if(playerRigidbody.velocity.y < 0 && isGround == false)
         {
             playerAnimator.SetBool("isJump", false);
             playerAnimator.SetBool("isFall", true);
@@ -61,7 +50,7 @@ public class PlayerScript : MonoBehaviour
         }
 
 
-        playerRigidbody.velocity = new Vector3(moveX * moveSpeed * Time.deltaTime, playerRigidbody.velocity.y,forwardSpeed * Time.deltaTime);
+        playerRigidbody.velocity = new Vector3(moveX * moveSpeed * Time.deltaTime, playerRigidbody.velocity.y,0);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -77,11 +66,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    public void OnJump()
     {
-        if(collision.gameObject.tag == "Ground")
+        if (isGround == true && currentJumpCount > 0)
         {
+            playerAnimator.SetBool("isJump", true);
+            playerRigidbody.velocity = Vector3.up * jumpPower;
             isGround = false;
+            currentJumpCount--;
         }
     }
 

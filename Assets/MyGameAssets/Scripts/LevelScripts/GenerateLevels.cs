@@ -12,8 +12,8 @@ public class GenerateLevels : MonoBehaviour
 
     [SerializeField]
     private float zPosition;
-    [SerializeField]
-    private float generateWidth;
+
+    private int levelCount;
 
     private bool creatingLevel;
 
@@ -27,7 +27,7 @@ public class GenerateLevels : MonoBehaviour
 
     void Update()
     {
-        if(!creatingLevel)
+        if (!creatingLevel)
         {
             creatingLevel = true;
             StartCoroutine(GenerateLevel());
@@ -38,7 +38,6 @@ public class GenerateLevels : MonoBehaviour
     {
         levelNumber = Random.Range(0, level.Length);
         Instantiate(level[levelNumber], new Vector3(0, 0, zPosition), Quaternion.identity);
-        zPosition += generateWidth;
         yield return new WaitForSeconds(generateTime);
         creatingLevel = false;
     }

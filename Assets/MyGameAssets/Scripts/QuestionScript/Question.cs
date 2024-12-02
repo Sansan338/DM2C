@@ -21,6 +21,7 @@ public class Question : MonoBehaviour
     private int secondNumber;
 
     private float answer;
+    private float playerAnswer;
 
     private int[] symbolNumber = {1,2,3,4};     //1 = "+"  2 = "-"  3 = "*"  4 = "/"
     private int symbol;
@@ -31,7 +32,8 @@ public class Question : MonoBehaviour
 
     void Start()
     {
-        chooseSymbolScript = GetComponent<ChooseSymbolButton>();
+        playerSelection = 0;
+        chooseSymbolScript = GameObject.Find("Button").GetComponent<ChooseSymbolButton>();
         ChooseFirstNumber();
         ChooseSecondNumber();
         ChooseSymbol();
@@ -40,12 +42,14 @@ public class Question : MonoBehaviour
 
     void Update()
     {
+        PlayerCalculation();
+
         if (chooseSymbolScript != null)
         {
-            playerSelection = chooseSymbolScript.GetChooseAnswer();
+            playerSelection = chooseSymbolScript.GetPlayerChoose();
         }
 
-        if (playerSelection == symbol)
+        if (playerAnswer == answer)
         {
             isTrue = true;
         }
@@ -57,19 +61,19 @@ public class Question : MonoBehaviour
 
     public void ChooseFirstNumber()
     {
-        firstNumber = Random.Range(0, 100);
+        firstNumber = Random.Range(0, 100 + 1);
         firstText.text = firstNumber.ToString();
     }
 
     public void ChooseSecondNumber()
     {
-        secondNumber = Random.Range(0, 100);
+        secondNumber = Random.Range(0, 100 + 1);
         secondText.text = secondNumber.ToString();
     }
 
     public void ChooseSymbol()
     {
-        symbol = Random.Range(0, symbolNumber.Length - 1);
+        symbol = Random.Range(1, symbolNumber.Length + 1);
     }
 
     public float Calculation()
@@ -91,9 +95,34 @@ public class Question : MonoBehaviour
             answer = firstNumber / secondNumber;
         }
 
+        Debug.Log ("“š‚¦"+answer);
+        Debug.Log ("Žl‘¥‰‰ŽZ"+symbol);
+
         answerText.text = answer.ToString();
 
         return answer;
+    }
+
+    public float PlayerCalculation()
+    {
+        if (chooseSymbolScript.GetPlayerChoose() == 1)
+        {
+            playerAnswer = firstNumber + secondNumber;
+        }
+        else if (chooseSymbolScript.GetPlayerChoose() == 2)
+        {
+            playerAnswer = firstNumber - secondNumber;
+        }
+        else if (chooseSymbolScript.GetPlayerChoose() == 3)
+        {
+            playerAnswer = firstNumber * secondNumber;
+        }
+        else if (chooseSymbolScript.GetPlayerChoose() == 4)
+        {
+            playerAnswer = firstNumber / secondNumber;
+        }
+
+        return playerAnswer;
     }
 
     public bool GetIsTrue()

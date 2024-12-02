@@ -1055,7 +1055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d9bbf5915778f4bbe8a2039315f934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chooseSymbolScript: {fileID: 0}
   firstText: {fileID: 657208904028368154}
   secondText: {fileID: 167636862935379187}
   symbolText: {fileID: 6040834580582595444}

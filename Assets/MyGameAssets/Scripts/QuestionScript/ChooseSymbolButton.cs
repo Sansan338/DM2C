@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class ChooseSymbolButton : MonoBehaviour
 {
-    private int playerAnswer;
+    private int playerChoose;
 
     public void ChoosePlus()
-    { playerAnswer = 1; }
+    {
+        playerChoose = 1;
+    }
 
     public void ChooseMinus()
-    { playerAnswer = 2; }
+    {
+        playerChoose = 2;
+    }
 
     public void ChooseMultiplied()
-    { playerAnswer = 3; }
+    { 
+        playerChoose = 3;
+    }
 
     public void ChooseDivided()
-    { playerAnswer = 4; }
-
-    public int GetChooseAnswer()
-    { return playerAnswer; }
+    {
+        playerChoose = 4;
+    }
+    public int GetPlayerChoose()
+    {
+        return playerChoose;
+    }
 }

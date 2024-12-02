@@ -23,8 +23,11 @@ public class NumberWallScript : MonoBehaviour
 
     private int correctCount;
 
+    private bool wasCorrect;
+
     void Start()
     {
+        wasCorrect = false;
         correctCount = 0;
     }
 
@@ -36,13 +39,16 @@ public class NumberWallScript : MonoBehaviour
     private void Update()
     {
         //ê≥âÇÃéûÇÕï«Çî≤ÇØÇÁÇÍÇÈ
-        if(question.GetIsTrue() == true)
+        if (question != null)
         {
-            wallCollider.isTrigger = true;
-        }
-        else if(question.GetIsTrue() == false)
-        {
-            wallCollider.isTrigger = false;
+            if (question.GetIsTrue() == true)
+            {
+                wallCollider.isTrigger = true;
+            }
+            else if (question.GetIsTrue() == false)
+            {
+                wallCollider.isTrigger = false;
+            }
         }
     }
 
@@ -53,6 +59,7 @@ public class NumberWallScript : MonoBehaviour
             var unnecessaryWall = Instantiate(brokenWall,new Vector3(wallCollider.transform.position.x,0,wallCollider.transform.position.z),this.transform.rotation);
 
             correctCount++;
+            wasCorrect = true;
 
             Destroy(unnecessaryWall, destroyTime);
         }
@@ -61,5 +68,15 @@ public class NumberWallScript : MonoBehaviour
     public int GetCorrectCount()
     {
         return correctCount;
+    }
+
+    public bool GetWasCorrect()
+    {
+        return wasCorrect;
+    }
+
+    public void SetWasCorrect()
+    {
+        wasCorrect = false;
     }
 }

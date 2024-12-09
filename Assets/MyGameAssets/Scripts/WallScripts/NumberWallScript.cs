@@ -21,23 +21,11 @@ public class NumberWallScript : MonoBehaviour
     [SerializeField]
     private float destroyTime;
 
-    private int correctCount;
-
-    private bool wasCorrect;
-
-    void Start()
-    {
-        wasCorrect = false;
-        correctCount = 0;
-    }
-
-    private void FixedUpdate()
-    {
-        wallRigidbody.AddForce(Vector3.back * ((moveSpeed + wallRigidbody.velocity.z) * movePower), ForceMode.Acceleration);
-    }
-
     private void Update()
     {
+        //ï«ÇÃà⁄ìÆ
+        wallRigidbody.AddForce(Vector3.back * ((moveSpeed + wallRigidbody.velocity.z) * movePower), ForceMode.Acceleration);
+
         //ê≥âÇÃéûÇÕï«Çî≤ÇØÇÁÇÍÇÈ
         if (question != null)
         {
@@ -54,29 +42,13 @@ public class NumberWallScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
-            var unnecessaryWall = Instantiate(brokenWall,new Vector3(wallCollider.transform.position.x,0,wallCollider.transform.position.z),this.transform.rotation);
+            var unnecessaryWall = Instantiate(brokenWall, new Vector3(wallCollider.transform.position.x, 0, wallCollider.transform.position.z), this.transform.rotation);
 
-            correctCount++;
-            wasCorrect = true;
+            GameManager.gameManager.PlusCorrectCount();
 
             Destroy(unnecessaryWall, destroyTime);
         }
-    }
-
-    public int GetCorrectCount()
-    {
-        return correctCount;
-    }
-
-    public bool GetWasCorrect()
-    {
-        return wasCorrect;
-    }
-
-    public void SetWasCorrect()
-    {
-        wasCorrect = false;
     }
 }

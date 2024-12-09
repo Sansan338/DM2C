@@ -67,7 +67,7 @@ public class Question : MonoBehaviour
 
     public void ChooseSecondNumber()
     {
-        secondNumber = Random.Range(0, 100 + 1);
+        secondNumber = Random.Range(1, 100 + 1);
         secondText.text = secondNumber.ToString();
     }
 

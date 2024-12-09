@@ -18,10 +18,13 @@ public class PlayerScript : MonoBehaviour
     private int currentJumpCount;
 
     private bool isGround;
+    private bool isCorrect;
 
     void Start()
     {
+        isCorrect = false;
         currentJumpCount = maxJump;
+        moveSpeed = 0;
     }
 
     void Update()
@@ -57,12 +60,21 @@ public class PlayerScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Wall")
         {
+            isCorrect = false;
             GameManager.gameManager.SetGameState(GameManager.GameState.GameOver);
         }
 
         if(collision.gameObject.tag == "Ground")
         {
             isGround = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.tag == "Wall")
+        {
+            isCorrect = true;
         }
     }
 
@@ -81,5 +93,17 @@ public class PlayerScript : MonoBehaviour
     public int GetJumpCount()
     {
         return currentJumpCount;
+    }
+
+    //ê≥âÇ©Ç«Ç§Ç©ÇéÊìæ
+    public bool GetIsCorrect()
+    {
+        return isCorrect;
+    }
+
+    //ÉäÉZÉbÉg
+    public void ResetIsCorrect()
+    {
+        isCorrect = false;
     }
 }

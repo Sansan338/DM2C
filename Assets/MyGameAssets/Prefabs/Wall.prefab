@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 423116595469823376}
   - component: {fileID: 6726553658836635046}
   - component: {fileID: 657208904028368154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirstNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,8 +126,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 3410715535172489217}
   - component: {fileID: 4979559138253492329}
   - component: {fileID: 4623986854051327831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightWallPiller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 7527335682122003442}
   - component: {fileID: 2048403269255276412}
   - component: {fileID: 1843124050505295311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 4812065698772183478}
   - component: {fileID: 6608261551630292610}
   - component: {fileID: 167636862935379187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SecondNumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -536,8 +536,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 5166697185596674854}
   - component: {fileID: 3099260910060099459}
   - component: {fileID: 6040834580582595444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Blank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,8 +707,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 9098154528739523033}
   - component: {fileID: 2254403325043848043}
   - component: {fileID: 6812959530433194785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Equal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,8 +878,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 120201875476130061}
   - component: {fileID: 8763070641892167023}
   - component: {fileID: 3892841435315645989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftWallPiller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879534998355859135}
   - component: {fileID: 2772399380533036905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Question
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 8013503337246252087}
   - component: {fileID: 4405044466349872175}
   - component: {fileID: 3356567485043250265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Answer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,8 +1185,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

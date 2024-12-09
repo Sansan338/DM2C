@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     private GameState currentGameState;
 
+    private int correctCount;
+
+
     public static GameManager gameManager;
 
     void Start()
@@ -21,11 +24,23 @@ public class GameManager : MonoBehaviour
         gameManager = this;
         Application.targetFrameRate = 60;
         SetGameState(GameState.Play);
+
+        correctCount = 0;
     }
 
     void Update()
     {
 
+    }
+
+    public void PlusCorrectCount()
+    {
+        correctCount++;
+    }
+
+    public int GetCorrectCount()
+    {
+        return correctCount;
     }
 
     public GameState GetGameState()

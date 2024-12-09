@@ -6,15 +6,13 @@ using UnityEngine.UI;
 public class CorrectScoreUIScript : MonoBehaviour
 {
     [SerializeField]
-    private NumberWallScript numberWallScript;
-    [SerializeField]
     private Text correctCountText;
 
     private int correctCount;
 
     void Update()
     {
-        correctCount = numberWallScript.GetCorrectCount();
+        correctCount = GameManager.gameManager.GetCorrectCount();
         correctCountText.text = correctCount.ToString();
     }
 }

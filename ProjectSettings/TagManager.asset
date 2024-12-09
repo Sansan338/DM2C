@@ -8,6 +8,7 @@ TagManager:
   - GameOverZone
   - Ground
   - Level
+  - WallDestroyer
   layers:
   - Default
   - TransparentFX
@@ -15,9 +16,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Wall
+  - Level
+  - Objects
   - 
   - 
   - 

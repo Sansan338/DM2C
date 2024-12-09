@@ -1,24 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CorrectUI : MonoBehaviour
 {
-    private NumberWallScript numberWallScript;
+    [SerializeField]
+    private PlayerScript playerScript;
+    [SerializeField]
+    private Animator correctAnimator;
 
-    private GameObject wall;
+    void Start()
+    {
+        correctAnimator.SetBool("isCorrect",false);
+    }
 
     void Update()
     {
-        if(numberWallScript.GetWasCorrect() == true)
+        if(playerScript.GetIsCorrect() == true)
         {
-            this.gameObject.SetActive(true);
+            correctAnimator.SetBool("isCorrect", true);
         }
     }
 
     public void OnAnimationEnd()
     {
-        this.gameObject.SetActive(false);
-        numberWallScript.SetWasCorrect();
+        correctAnimator.SetBool("isCorrect", false);
+        playerScript.ResetIsCorrect();
     }
 }

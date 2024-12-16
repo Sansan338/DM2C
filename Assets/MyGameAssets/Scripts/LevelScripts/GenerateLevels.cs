@@ -34,6 +34,8 @@ public class GenerateLevels : MonoBehaviour
         }
     }
 
+    //現在は時間ごとに生成されているので、生成されている数が常に一定になるように改善が必要
+    //最後に生成されたレベルを取得し、そのレベルが一定の位置まで進むと次のレベルが出現するようにする？
     IEnumerator GenerateLevel()
     {
         levelNumber = Random.Range(0, level.Length);

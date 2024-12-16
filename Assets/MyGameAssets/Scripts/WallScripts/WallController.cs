@@ -20,7 +20,7 @@ public class WallController : MonoBehaviour
 
     void Update()
     {
-        if(wall != null && wall.transform.position.z <= endPositionZ)
+        if(wall == null || wall.transform.position.z <= endPositionZ)
         {
             Destroy(wall);
             wall = Instantiate(wallPrefab, new Vector3(0, wallPrefab.transform.position.y, startPositionZ), Quaternion.identity);

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LevelDestroyer : MonoBehaviour
 {
+    [SerializeField]
+    private GenerateLevels generateLevels;
+
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Level")

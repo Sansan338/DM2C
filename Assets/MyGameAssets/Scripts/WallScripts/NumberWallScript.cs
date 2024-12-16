@@ -24,7 +24,8 @@ public class NumberWallScript : MonoBehaviour
     private void Update()
     {
         //ï«ÇÃà⁄ìÆ
-        wallRigidbody.AddForce(Vector3.back * ((moveSpeed + wallRigidbody.velocity.z) * movePower), ForceMode.Acceleration);
+        //wallRigidbody.AddForce(Vector3.back * ((moveSpeed + wallRigidbody.velocity.z) * movePower), ForceMode.Acceleration);
+        wallRigidbody.velocity = new Vector3(0, 0, -moveSpeed);
 
         //ê≥âÇÃéûÇÕï«Çî≤ÇØÇÁÇÍÇÈ
         if (question != null)
@@ -45,6 +46,8 @@ public class NumberWallScript : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             var unnecessaryWall = Instantiate(brokenWall, new Vector3(wallCollider.transform.position.x, 0, wallCollider.transform.position.z), this.transform.rotation);
+
+            Destroy(this.gameObject);
 
             GameManager.gameManager.PlusCorrectCount();
 

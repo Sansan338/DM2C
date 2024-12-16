@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField]
+    private LevelMove levelMove;
+
+    [SerializeField]
     private Rigidbody playerRigidbody;
     [SerializeField]
     private Animator playerAnimator;
@@ -14,6 +17,11 @@ public class PlayerScript : MonoBehaviour
     private float jumpPower;
     [SerializeField]
     private int maxJump;
+
+    [SerializeField]
+    private int acceleration;
+    [SerializeField]
+    private int accelerationFrequency;
 
     private int currentJumpCount;
 
@@ -75,6 +83,15 @@ public class PlayerScript : MonoBehaviour
         if(collider.gameObject.tag == "Wall")
         {
             isCorrect = true;
+            VariableMoveSpeed();
+        }
+    }
+
+    private void VariableMoveSpeed()
+    {
+        if(GameManager.gameManager.GetCorrectCount() % accelerationFrequency == 0)
+        {
+            moveSpeed += acceleration;
         }
     }
 

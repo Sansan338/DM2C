@@ -33,6 +33,7 @@ public class PlayerScript : MonoBehaviour
         isCorrect = false;
         currentJumpCount = maxJump;
         moveSpeed = 0;
+        playerAnimator.SetBool("isMove",true);
     }
 
     void Update()

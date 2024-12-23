@@ -17,8 +17,8 @@ public class Question : MonoBehaviour
     [SerializeField]
     private TextMeshPro answerText;
 
-    private int firstNumber;
-    private int secondNumber;
+    private float firstNumber;
+    private float secondNumber;
 
     private float answer;
     private float playerAnswer;

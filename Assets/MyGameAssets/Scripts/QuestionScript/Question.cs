@@ -17,6 +17,7 @@ public class Question : MonoBehaviour
     [SerializeField]
     private TextMeshPro answerText;
 
+    private float number;
     private float firstNumber;
     private float secondNumber;
 
@@ -32,6 +33,9 @@ public class Question : MonoBehaviour
 
     void Start()
     {
+        //Å‰‚Í–â‘è‚ªŠÈ’P‚É‚È‚é‚æ‚¤‚ÉA”š‚ÌÅ‘å’l‚ğ10‚É‚·‚é
+        number = 10;
+
         playerSelection = 0;
         chooseSymbolScript = GameObject.Find("Button").GetComponent<ChooseSymbolButton>();
         ChooseFirstNumber();
@@ -61,13 +65,13 @@ public class Question : MonoBehaviour
 
     public void ChooseFirstNumber()
     {
-        firstNumber = Random.Range(0, 100 + 1);
+        firstNumber = Random.Range(0, number + 1);
         firstText.text = firstNumber.ToString();
     }
 
     public void ChooseSecondNumber()
     {
-        secondNumber = Random.Range(1, 100 + 1);
+        secondNumber = Random.Range(1, number + 1);
         secondText.text = secondNumber.ToString();
     }
 

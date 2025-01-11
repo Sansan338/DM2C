@@ -17,7 +17,7 @@ public class Question : MonoBehaviour
     [SerializeField]
     private TextMeshPro answerText;
 
-    private float number;
+    private int number;
     private float firstNumber;
     private float secondNumber;
 
@@ -82,7 +82,11 @@ public class Question : MonoBehaviour
 
     public float Calculation()
     {
-        if (symbol == 1)
+        if (symbol == 4)
+        {
+            answer = firstNumber / secondNumber;
+        }
+        else if (symbol == 1)
         {
             answer = firstNumber + secondNumber;
         }
@@ -94,15 +98,18 @@ public class Question : MonoBehaviour
         {
             answer = firstNumber * secondNumber;
         }
-        else if (symbol == 4)
-        {
-            answer = firstNumber / secondNumber;
-        }
 
         Debug.Log ("“š‚¦"+answer);
         Debug.Log ("Žl‘¥‰‰ŽZ"+symbol);
 
-        answerText.text = answer.ToString();
+        if ((int)answer == answer)
+        {
+            answerText.text = answer.ToString();
+        }
+        else if ((int)answer != answer)
+        {
+            answerText.text = answer.ToString("f1");
+        }
 
         return answer;
     }

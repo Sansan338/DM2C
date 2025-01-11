@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -27,10 +28,12 @@ public class PlayerScript : MonoBehaviour
 
     private bool isGround;
     private bool isCorrect;
+    private bool isAttack;
 
     void Start()
     {
         isCorrect = false;
+        isAttack = false;
         currentJumpCount = maxJump;
         moveSpeed = 0;
         playerAnimator.SetBool("isMove",true);
@@ -42,6 +45,7 @@ public class PlayerScript : MonoBehaviour
 
         var moveX = Input.GetAxis("Horizontal");
 
+        //‚»‚Ì‚¤‚¿Á‚·‰Â”\«‚ ‚è
         if(Input.GetKeyDown(KeyCode.Space) && isGround == true && currentJumpCount > 0)
         {
             playerAnimator.SetBool("isJump",true);
@@ -85,6 +89,7 @@ public class PlayerScript : MonoBehaviour
         {
             isCorrect = true;
             VariableMoveSpeed();
+            playerAnimator.SetBool("isAttack", false);
         }
     }
 
@@ -106,6 +111,13 @@ public class PlayerScript : MonoBehaviour
             currentJumpCount--;
         }
     }
+
+    public void OnAttack()
+    {
+
+        playerAnimator.SetBool("isAttack", true);
+    }
+
 
     //ƒWƒƒƒ“ƒv‰ñ”‚ğæ“¾
     public int GetJumpCount()

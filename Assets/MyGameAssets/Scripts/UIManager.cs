@@ -7,10 +7,13 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject gameOverUI;
+    [SerializeField]
+    private GameObject resultUI;
 
     void Start()
     {
         gameOverUI.SetActive(false);
+        resultUI.SetActive(false);
     }
 
     void Update()
@@ -18,6 +21,7 @@ public class UIManager : MonoBehaviour
         if(GameManager.gameManager.GetGameState() == GameManager.GameState.GameOver)
         {
             gameOverUI.SetActive(true);
+            resultUI.SetActive(true);
         }
     }
 }

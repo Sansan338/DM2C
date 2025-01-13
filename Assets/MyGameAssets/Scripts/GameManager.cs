@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public enum GameState
     {
+        Ready,
         Play,
         Pause,
         GameOver,
@@ -14,23 +15,20 @@ public class GameManager : MonoBehaviour
 
     private GameState currentGameState;
 
-    private int correctCount;
+    private float currentTimeCount = 3.0f;
 
+    private int correctCount;
 
     public static GameManager gameManager;
 
     void Start()
     {
-        gameManager = this;
         Application.targetFrameRate = 60;
-        SetGameState(GameState.Play);
 
+        SetGameState(GameState.Ready);
+
+        gameManager = this;
         correctCount = 0;
-    }
-
-    void Update()
-    {
-
     }
 
     public void PlusCorrectCount()
@@ -51,5 +49,10 @@ public class GameManager : MonoBehaviour
     public void SetGameState(GameState gameState)
     {
         currentGameState = gameState;
+    }
+
+    public float GetCurrentTimeCount()
+    {
+        return currentTimeCount;
     }
 }

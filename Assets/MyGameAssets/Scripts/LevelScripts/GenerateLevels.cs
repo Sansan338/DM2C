@@ -5,6 +5,9 @@ using UnityEngine;
 public class GenerateLevels : MonoBehaviour
 {
     [SerializeField]
+    private LevelDestroyer levelDestroyerScript;
+
+    [SerializeField]
     private GameObject[] level;
 
     [SerializeField]
@@ -23,6 +26,7 @@ public class GenerateLevels : MonoBehaviour
     void Start()
     {
         creatingLevel = false;
+        levelCount = GameObject.FindGameObjectsWithTag("Level").Length;
     }
 
     void Update()
@@ -30,7 +34,14 @@ public class GenerateLevels : MonoBehaviour
         if (!creatingLevel)
         {
             creatingLevel = true;
-            StartCoroutine(GenerateLevel());
+            //StartCoroutine(GenerateLevel());
+        }
+
+        if(levelDestroyerScript.GetIsDestroy() == true)
+        {
+            levelNumber = Random.Range(0, level.Length);
+            Instantiate(level[levelNumber],new Vector3(0,0,zPosition),Quaternion.identity);
+            levelDestroyerScript.SetFalseIsDestroy();
         }
     }
 

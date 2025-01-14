@@ -114,7 +114,6 @@ public class PlayerScript : MonoBehaviour
 
     public void OnAttack()
     {
-
         playerAnimator.SetBool("isAttack", true);
     }
 

@@ -6,9 +6,6 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField]
-    private LevelMove levelMove;
-
-    [SerializeField]
     private Rigidbody playerRigidbody;
     [SerializeField]
     private Animator playerAnimator;
@@ -29,6 +26,9 @@ public class PlayerScript : MonoBehaviour
     private bool isGround;
     private bool isCorrect;
     private bool isAttack;
+
+    [SerializeField]
+    private GameObject hitEffect;
 
     void Start()
     {
@@ -90,6 +90,8 @@ public class PlayerScript : MonoBehaviour
             isCorrect = true;
             VariableMoveSpeed();
             playerAnimator.SetBool("isAttack", false);
+
+            Instantiate(hitEffect, this.gameObject.transform);
         }
     }
 

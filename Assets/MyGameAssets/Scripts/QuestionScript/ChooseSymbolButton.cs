@@ -6,6 +6,11 @@ public class ChooseSymbolButton : MonoBehaviour
 {
     private int playerChoose;
 
+    private void Start()
+    {
+        playerChoose = 0;
+    }
+
     public void ChoosePlus()
     {
         playerChoose = 1;

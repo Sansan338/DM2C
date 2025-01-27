@@ -34,4 +34,9 @@ public class ChooseSymbolButton : MonoBehaviour
     {
         return playerChoose;
     }
+
+    public void ResetPlayerChoose()
+    {
+        playerChoose = 0;
+    }
 }

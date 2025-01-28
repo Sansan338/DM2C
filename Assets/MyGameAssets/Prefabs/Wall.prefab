@@ -310,8 +310,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 13.2314205}
+  m_Center: {x: 0, y: 0, z: 5}
 --- !u!114 &8836816464810103593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,12 +325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: {fileID: 2772399380533036905}
-  wallRigidbody: {fileID: 0}
   wallCollider: {fileID: 740823000450809505}
-  brokenWall: {fileID: 2257433130922116605, guid: fb41aa983a9a77141b1710f3b3766ffb, type: 3}
   movePower: 20
   moveSpeed: 20
-  destroyTime: 3
 --- !u!1 &2878337330156137791
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,8 +625,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -6,6 +6,9 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     [SerializeField]
+    private ChooseSymbolButton chooseSymbolButton;
+
+    [SerializeField]
     private Rigidbody playerRigidbody;
     [SerializeField]
     private Animator playerAnimator;
@@ -92,6 +95,8 @@ public class PlayerScript : MonoBehaviour
             playerAnimator.SetBool("isAttack", false);
 
             Instantiate(hitEffect, this.gameObject.transform);
+
+            chooseSymbolButton.ResetPlayerChoose();
         }
     }
 

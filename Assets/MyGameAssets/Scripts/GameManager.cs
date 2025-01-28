@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
 
     private int correctCount;
 
+    [SerializeField]
+    private float levelMoveSpeed;
+    [SerializeField]
+    private float accelerationAmount;
+
     public static GameManager gameManager;
 
     void Start()
@@ -30,6 +35,7 @@ public class GameManager : MonoBehaviour
         gameManager = this;
         correctCount = 0;
     }
+
 
     public void PlusCorrectCount()
     {
@@ -54,5 +60,18 @@ public class GameManager : MonoBehaviour
     public float GetCurrentTimeCount()
     {
         return currentTimeCount;
+    }
+
+    public float GetLevelMoveSpeed()
+    {
+        return levelMoveSpeed;
+    }
+
+    public void SpeedUp()
+    {
+        if(correctCount % 10 == 0 && correctCount  >= 10)
+        {
+            levelMoveSpeed += accelerationAmount;
+        }
     }
 }

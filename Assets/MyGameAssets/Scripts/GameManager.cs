@@ -20,9 +20,14 @@ public class GameManager : MonoBehaviour
     private int correctCount;
 
     [SerializeField]
+    private SpeedUpUIScript speedUpUIScript;
+
+    [SerializeField]
     private float levelMoveSpeed;
     [SerializeField]
     private float accelerationAmount;
+    [SerializeField]
+    private int interval;
 
     public static GameManager gameManager;
 
@@ -69,9 +74,10 @@ public class GameManager : MonoBehaviour
 
     public void SpeedUp()
     {
-        if(correctCount % 10 == 0 && correctCount  >= 10)
+        if(correctCount % interval == 0 && correctCount  >= interval)
         {
             levelMoveSpeed += accelerationAmount;
+            speedUpUIScript.ShowSpeedUpUI();
         }
     }
 }

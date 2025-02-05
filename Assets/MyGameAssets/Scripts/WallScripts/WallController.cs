@@ -13,9 +13,12 @@ public class WallController : MonoBehaviour
 
     private GameObject wall;
 
+    private bool isWall;
+
     void Start()
     {
         wall = Instantiate(wallPrefab, new Vector3(0,wallPrefab.transform.position.y,startPositionZ),Quaternion.identity);
+        isWall = false;
     }
 
     void Update()
@@ -24,6 +27,17 @@ public class WallController : MonoBehaviour
         {
             Destroy(wall);
             wall = Instantiate(wallPrefab, new Vector3(0, wallPrefab.transform.position.y, startPositionZ), Quaternion.identity);
+            isWall = true;
         }
+    }
+
+    public bool GetIsWall()
+    {
+        return isWall;
+    }
+
+    public void SetIsWall()
+    {
+        isWall = false;
     }
 }

@@ -12,13 +12,12 @@ public class PlayerChoiceUI : MonoBehaviour
 
     private int chooseSymbol;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
+        if (GameManager.gameManager.GetGameState() == GameManager.GameState.GameOver)
+        {
+            Destroy(this.gameObject);
+        }
         chooseSymbol = chooseSymboButton.GetPlayerChoose();
 
         if (chooseSymbol == 0)

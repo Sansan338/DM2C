@@ -21,19 +21,17 @@ public class NumberWallScript : MonoBehaviour
         //wallRigidbody.AddForce(Vector3.back * ((moveSpeed + wallRigidbody.velocity.z) * movePower), ForceMode.Acceleration);
 
         this.gameObject.transform.position -= new Vector3(0, 0, GameManager.gameManager.GetLevelMoveSpeed() * Time.deltaTime);
-        
+
 
         //ê≥âÇÃéûÇÕï«Çî≤ÇØÇÁÇÍÇÈ
-        if (question != null)
+
+        if (question.GetIsTrue() == true)
         {
-            if (question.GetIsTrue() == true)
-            {
-                wallCollider.isTrigger = true;
-            }
-            else if (question.GetIsTrue() == false)
-            {
-                wallCollider.isTrigger = false;
-            }
+            wallCollider.isTrigger = true;
+        }
+        else if (question.GetIsTrue() == false)
+        {
+            wallCollider.isTrigger = false;
         }
     }
 

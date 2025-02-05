@@ -108,7 +108,11 @@ public class Question : MonoBehaviour
         }
         else if ((int)answer != answer)
         {
-            answerText.text = answer.ToString("f1");
+            ChooseFirstNumber();
+            ChooseSecondNumber();
+            ChooseSymbol();
+            Calculation();
+            //answerText.text = answer.ToString("f1");
         }
 
         return answer;

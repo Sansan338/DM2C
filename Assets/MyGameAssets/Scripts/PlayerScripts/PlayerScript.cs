@@ -28,7 +28,6 @@ public class PlayerScript : MonoBehaviour
 
     private bool isGround;
     private bool isCorrect;
-    private bool isAttack;
 
     [SerializeField]
     private GameObject hitEffect;
@@ -36,7 +35,6 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         isCorrect = false;
-        isAttack = false;
         currentJumpCount = maxJump;
         moveSpeed = 0;
         playerAnimator.SetBool("isMove",true);
@@ -67,9 +65,6 @@ public class PlayerScript : MonoBehaviour
         {
             playerAnimator.SetBool("isFall",false);
         }
-
-
-        playerRigidbody.velocity = new Vector3(moveX * moveSpeed * Time.deltaTime, playerRigidbody.velocity.y,0);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -92,7 +87,6 @@ public class PlayerScript : MonoBehaviour
         {
             isCorrect = true;
             VariableMoveSpeed();
-            playerAnimator.SetBool("isAttack", false);
 
             Instantiate(hitEffect, this.gameObject.transform);
 
@@ -118,12 +112,6 @@ public class PlayerScript : MonoBehaviour
             currentJumpCount--;
         }
     }
-
-    public void OnAttack()
-    {
-        playerAnimator.SetBool("isAttack", true);
-    }
-
 
     //ÉWÉÉÉìÉvâÒêîÇéÊìæ
     public int GetJumpCount()

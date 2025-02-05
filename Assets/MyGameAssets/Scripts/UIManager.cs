@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     private GameObject gameOverUI;
     [SerializeField]
     private GameObject resultUI;
+    
 
     void Start()
     {

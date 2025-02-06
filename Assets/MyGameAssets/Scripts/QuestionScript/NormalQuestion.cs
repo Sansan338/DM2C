@@ -98,9 +98,6 @@ public class NormalQuestion : MonoBehaviour
             answer = firstNumber * secondNumber;
         }
 
-        Debug.Log("“š‚¦" + answer);
-        Debug.Log("Žl‘¥‰‰ŽZ" + symbol);
-
         if ((int)answer == answer)
         {
             answerText.text = answer.ToString();

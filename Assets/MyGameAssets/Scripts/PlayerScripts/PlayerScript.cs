@@ -29,8 +29,16 @@ public class PlayerScript : MonoBehaviour
     private bool isGround;
     private bool isCorrect;
 
+
+    //パーティクル
     [SerializeField]
     private GameObject hitEffect;
+
+    //効果音
+    [SerializeField]
+    private AudioClip trueHitSound;
+    [SerializeField]
+    private AudioClip falseHitSound;
 
     void Start()
     {
@@ -72,6 +80,7 @@ public class PlayerScript : MonoBehaviour
         if(collision.gameObject.tag == "Wall")
         {
             isCorrect = false;
+            AudioSource.PlayClipAtPoint(falseHitSound,this.transform.position);
             GameManager.gameManager.SetGameState(GameManager.GameState.GameOver);
         }
 
@@ -89,6 +98,8 @@ public class PlayerScript : MonoBehaviour
             VariableMoveSpeed();
 
             Instantiate(hitEffect, this.gameObject.transform);
+
+            AudioSource.PlayClipAtPoint(trueHitSound,this.transform.position);
 
             chooseSymbolButton.ResetPlayerChoose();
         }

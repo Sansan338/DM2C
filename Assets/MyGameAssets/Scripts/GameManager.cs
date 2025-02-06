@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
         correctCount = 0;
     }
 
-
     public void PlusCorrectCount()
     {
         correctCount++;
@@ -74,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void SpeedUp()
     {
-        if(correctCount % interval == 0 && correctCount  >= interval)
+        if(correctCount % interval == 0 || correctCount == interval)
         {
             levelMoveSpeed += accelerationAmount;
             speedUpUIScript.ShowSpeedUpUI();

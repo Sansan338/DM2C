@@ -20,7 +20,10 @@ public class NumberWallScript : MonoBehaviour
         //•Ç‚ÌˆÚ“®
         //wallRigidbody.AddForce(Vector3.back * ((moveSpeed + wallRigidbody.velocity.z) * movePower), ForceMode.Acceleration);
 
-        this.gameObject.transform.position -= new Vector3(0, 0, GameManager.gameManager.GetLevelMoveSpeed() * Time.deltaTime);
+        if (GameManager.gameManager.GetGameState() != GameManager.GameState.GameOver)
+        {
+            this.gameObject.transform.position -= new Vector3(0, 0, GameManager.gameManager.GetLevelMoveSpeed() * Time.deltaTime);
+        }
 
 
         //³‰ğ‚Ì‚Í•Ç‚ğ”²‚¯‚ç‚ê‚é

@@ -5,10 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class ChangeSceneScript : MonoBehaviour
 {
-    private void Start()
+    public void StartEasy()
     {
-        
+        Invoke("StartEasyScene", 1);
     }
+
+    public void StartNormal()
+    {
+        Invoke("StartNormalScene", 1);
+    }
+
+    public void StartHard()
+    {
+        Invoke("StartHardScene", 1);
+    }
+
+    public void StartTutorial()
+    {
+        Invoke("StartTutorialScene", 1);
+    }
+
+    public void StartTitle()
+    {
+        Invoke("ReturnTitleScene", 1);
+    }
+
 
     public void StartEasyScene()
     {

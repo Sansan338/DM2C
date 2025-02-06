@@ -12,12 +12,15 @@ public class NormalNumberWallScript : MonoBehaviour
 
     private void Update()
     {
-        this.gameObject.transform.position -= new Vector3(0, 0, GameManager.gameManager.GetLevelMoveSpeed() * Time.deltaTime);
+        if (GameManager.gameManager.GetGameState() != GameManager.GameState.GameOver)
+        {
+            this.gameObject.transform.position -= new Vector3(0, 0, GameManager.gameManager.GetLevelMoveSpeed() * Time.deltaTime);
+        }
 
 
-        //³‰ğ‚Ì‚Í•Ç‚ğ”²‚¯‚ç‚ê‚é
+            //³‰ğ‚Ì‚Í•Ç‚ğ”²‚¯‚ç‚ê‚é
 
-        if (normalQuestion.GetIsTrue() == true)
+            if (normalQuestion.GetIsTrue() == true)
         {
             wallCollider.isTrigger = true;
         }

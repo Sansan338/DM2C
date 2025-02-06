@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2745978424884298979}
   - component: {fileID: 1884122093367889076}
   - component: {fileID: 4841064457295119459}
+  - component: {fileID: 3189876375723600139}
   m_Layer: 5
   m_Name: ReturnTitleButton
   m_TagString: Untagged
@@ -38,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -400, y: -617.99994}
-  m_SizeDelta: {x: 490, y: 140}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8928436093667512176
 CanvasRenderer:
@@ -68,8 +69,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 80c370aa92bd9c348949cffa2ae0ce5a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -124,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4841064457295119459}
         m_TargetAssemblyTypeName: ChangeSceneScript, Assembly-CSharp
-        m_MethodName: ReturnTitleScene
+        m_MethodName: StartTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -146,6 +147,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b7dfd58e3f2f948bd8c156ca47c841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3189876375723600139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818597118737137703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 1e4f334edc92a1a4c949a90de94e1d02, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2955487504261544323
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +581,7 @@ GameObject:
   - component: {fileID: 6168447501634139109}
   - component: {fileID: 8335070901843788874}
   - component: {fileID: 8813678000207179397}
+  - component: {fileID: 2431126512118717219}
   m_Layer: 5
   m_Name: ReTryButton
   m_TagString: Untagged
@@ -576,7 +607,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 400, y: -618}
-  m_SizeDelta: {x: 490, y: 140}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7464237522260269396
 CanvasRenderer:
@@ -606,8 +637,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 80c370aa92bd9c348949cffa2ae0ce5a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -662,7 +693,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8813678000207179397}
         m_TargetAssemblyTypeName: ChangeSceneScript, Assembly-CSharp
-        m_MethodName: StartEasyScene
+        m_MethodName: StartEasy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -684,6 +715,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b7dfd58e3f2f948bd8c156ca47c841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2431126512118717219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7902580402999721650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 1e4f334edc92a1a4c949a90de94e1d02, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8237809968009789255
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +779,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 2000, y: 2000}
+  m_SizeDelta: {x: 1440, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &788259892000517932
 CanvasRenderer:
